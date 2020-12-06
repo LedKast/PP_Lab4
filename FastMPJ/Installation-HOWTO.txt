@@ -1,0 +1,77 @@
+Quick Installation Guide: FastMPJ
+=================================
+
+1) Make sure you have Java 1.6 or higher version
+
+2) Run the installer by double clicking or running the command:
+        "java  -jar fastmpj_for_tcpip_and_shared_memory.jar"
+   Depending on the installation directory, you should run the installer
+   with admin privileges if the installation directory is not under
+   your user home path. On windows platforms you must execute a
+   console having administrator permissions before running the command
+   above.
+
+   NOTE: To launch the installer in console mode rather than in GUI 
+   mode (the default), you can specify one of the following parameters
+   on the command line:
+        -console : to run the installation in interactive console mode
+        -language <iso3_lang>: specifies the iso3 code of the language
+                  pack to use. Available languages are English (eng)
+                  and Spanish (spa).
+   By this way, an example to launch an interactive console
+   installation could be: 
+        "java -jar fastmpj_for_tcpip_and_shared_memory.jar -console"
+
+3) Set FMPJ_HOME, PATH and JAVA_HOME environmental variables 
+
+	 3.1) On UNIX/Linux/Mac you can set them in your profile or your shell
+        configuration files, please just follow the instructions
+        below:
+
+        export FMPJ_HOME=/path/to/fmpj/
+        export PATH=$FMPJ_HOME/bin:$PATH
+        export JAVA_HOME=/path/to/java
+
+	 3.2) If you want running your applications with the "psmdev" device, you
+        should consider that, for the correct working of this device, you
+        must add the LD_PRELOAD variable pointing to the "libjsig.so"
+        signal library
+
+        export LD_PRELOAD=$JAVA_HOME/jre/lib/amd64/server/libjsig.so
+
+
+4) After the installation process you can verify the installation
+running the examples provided:
+
+   fmpjrun -np 2 -class examples.HelloWorld
+   fmpjrun -np 2 -class examples.MonteCarloPi
+   fmpjrun -np 2 -class examples.Echo
+
+5) For running the examples using the shared memory support, you 
+   should call the "smdev" device like the next instructions:
+
+   fmpjrun -dev smdev -np 2 -class examples.HelloWorld
+   fmpjrun -dev smdev -np 2 -class examples.MonteCarloPi
+   fmpjrun -dev smdev -np 2 -class examples.Echo
+
+
+6) For running the examples using the Infiniband support, you should call
+the "ibvdev" device like the next instructions:
+
+   fmpjrun -dev ibvdev -np 2 -class examples.HelloWorld
+   fmpjrun -dev ibvdev -np 2 -class examples.MonteCarloPi
+   fmpjrun -dev ibvdev -np 2 -class examples.Echo
+
+7) Besides the examples, FastMPJ provides some benchmarks, for running the
+PingPong benchmark with the "psmdev" device you could type this instruction:
+
+   fmpjrun -dev psmdev -np 2 -class MB_MPJ.PingPong
+
+8) Compiling your own MPJ code requires including $FMPJ_HOME/lib/mpj.jar
+   in your classpath. An example (compiling HelloWorld.java placed in
+   $FMPJ_HOME/examples) is, on Linux platforms:
+        javac -cp $FMPJ_HOME/lib/mpj.jar $FMPJ_HOME/examples/HelloWorld.java
+   Alternatively you can use *fmpjc*, a command that simplifies the 
+   process:
+        fmpjc $FMPJ_HOME/examples/HelloWorld.java
+

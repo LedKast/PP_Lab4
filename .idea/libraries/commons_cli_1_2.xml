@@ -1,0 +1,30 @@
+<component name="libraryTable">
+  <library name="commons-cli-1.2">
+    <CLASSES>
+      <root url="jar://C:/mpj/lib/commons-cli-1.2.jar!/" />
+      <root url="jar://C:/mpj/lib/commons-codec-1.8.jar!/" />
+      <root url="jar://C:/mpj/lib/commons-io-2.4.jar!/" />
+      <root url="jar://C:/mpj/lib/daemon.jar!/" />
+      <root url="jar://C:/mpj/lib/daemonmanager.jar!/" />
+      <root url="jar://C:/mpj/lib/hybdev.jar!/" />
+      <root url="jar://C:/mpj/lib/javax.servlet.jar!/" />
+      <root url="jar://C:/mpj/lib/loader1.jar!/" />
+      <root url="jar://C:/mpj/lib/loader2.jar!/" />
+      <root url="jar://C:/mpj/lib/log4j-1.2.11.jar!/" />
+      <root url="jar://C:/mpj/lib/mpi.jar!/" />
+      <root url="jar://C:/mpj/lib/mpiExp.jar!/" />
+      <root url="jar://C:/mpj/lib/mpj.jar!/" />
+      <root url="jar://C:/mpj/lib/mpjbuf.jar!/" />
+      <root url="jar://C:/mpj/lib/mpjdev.jar!/" />
+      <root url="jar://C:/mpj/lib/mxdev.jar!/" />
+      <root url="jar://C:/mpj/lib/niodev.jar!/" />
+      <root url="jar://C:/mpj/lib/runtimecommon.jar!/" />
+      <root url="jar://C:/mpj/lib/smpdev.jar!/" />
+      <root url="jar://C:/mpj/lib/starter.jar!/" />
+      <root url="jar://C:/mpj/lib/tools.jar!/" />
+      <root url="jar://C:/mpj/lib/xdev.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
