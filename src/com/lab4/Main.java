@@ -2,6 +2,8 @@ package com.lab4;
 
 import mpi.MPI;
 
+import static java.lang.Math.min;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,11 +14,18 @@ public class Main {
     }
 
     private static void testScript(String[] args, int rows, int cols) {
+        int systemThreads = Runtime.getRuntime().availableProcessors();
+        int maxThreads = systemThreads;
+        int maxElementsPerThread = 100000;
+
+        int maxNeededThreads = (int)((double)(rows*cols + maxElementsPerThread - 1) / (double)maxElementsPerThread);
+        int numberNeededThreads = min(systemThreads !=  0 ? systemThreads : maxThreads, maxNeededThreads);
+
+
         new MPIMatrixSum(1, rows, cols, args).run();
         new MPIMatrixSum(2, rows, cols, args).run();
-        new MPIMatrixSum(4, rows, cols, args).run(); // real cores
-        new MPIMatrixSum(8, rows, cols, args).run(); // threads (cores*2)
-        new MPIMatrixSum(16, rows, cols, args).run();
-        new MPIMatrixSum(32, rows, cols, args).run();
+        new MPIMatrixSum(systemThreads, rows, cols, args).run(); // system threads
+        new MPIMatrixSum(2*systemThreads, rows, cols, args).run(); // 2*system threads
+        new MPIMatrixSum(numberNeededThreads, rows, cols, args).run(); // system threads
     }
 }

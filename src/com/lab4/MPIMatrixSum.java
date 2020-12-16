@@ -45,7 +45,6 @@ public class MPIMatrixSum {
         double[] matrix = matrix2D.getMatrix();
         matrix2D.printMatrix();
 
-        long time = System.currentTimeMillis();
 
         // Раздаем задачи
         for (int i = 0; i < activeProcCount; i++) {
@@ -58,6 +57,8 @@ public class MPIMatrixSum {
             // асинхронная (неблокирующая) отправка данных на узлы
             MPI.COMM_WORLD.Isend(matrix, offset, blockSize, MPI.DOUBLE, i, TAG);
         }
+        long time = System.currentTimeMillis();
+
         // Ожидаем данные
         double totalSum = 0;
         for (int i = 0; i < activeProcCount; i++) {

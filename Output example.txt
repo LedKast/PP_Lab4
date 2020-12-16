@@ -1,0 +1,50 @@
+Matrix size: 500x500
+Process count: 1
+Total time: 83 ms
+Total sum: 1125255.0
+=========================
+Matrix size: 500x500
+Process count: 2
+Total time: 73 ms
+Total sum: 1125255.0
+=========================
+Matrix size: 500x500
+Process count: 8
+Total time: 88 ms
+Total sum: 1125255.0
+=========================
+Matrix size: 500x500
+Process count: 16
+Total time: 77 ms
+Total sum: 1125255.0
+=========================
+Matrix size: 500x500
+Process count: 3
+Total time: 29 ms
+Total sum: 1125255.0
+=========================
+Matrix size: 5000x5000
+Process count: 1
+Total time: 1111 ms
+Total sum: 1.12491087E8
+=========================
+Matrix size: 5000x5000
+Process count: 2
+Total time: 424 ms
+Total sum: 1.12491087E8
+=========================
+Matrix size: 5000x5000
+Process count: 8
+Total time: 107 ms
+Total sum: 1.12491087E8
+=========================
+Matrix size: 5000x5000
+Process count: 16
+Total time: 41 ms
+Total sum: 1.12491087E8
+=========================
+Matrix size: 5000x5000
+Process count: 8
+Total time: 42 ms
+Total sum: 1.12491087E8
+=========================
